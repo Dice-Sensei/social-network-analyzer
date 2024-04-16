@@ -18,12 +18,13 @@ Vyberte si jednu z následujících úloh:
     -	S kolika lidmi se průměrně uživatelé znají přes 1 uživatele, přes 2 uživatele atd. (až po maximální “vzdálenost” v importovaných datech)?
     -	Jak je průměrně veliká každá maximálně veliká skupina, kde se každý zná s každým? (Tedy pokud například uživatelé A, B, C a D se všichni vzájemně znají a uživatelé D, E, F se všichni vzájemně znají, ale mezi A , B , C a E, F není vzájemná vazba, pak jsou tyto skupiny dvě - A, B, C, D a skupina D, E, F, tedy výsledek je, že průměrná velikost je 3.5)
 2.	Graficky zobrazte data pro dataset například v následující podobě (můžete využít libovolnou knihovnu, kterou v projektu použijete):
-   ![image](https://github.com/Dice-Sensei/social-network-analyzer/assets/92362716/b7abed3e-a6e3-45d5-9a31-d3d44f3b358f)
+![image](https://github.com/Dice-Sensei/social-network-analyzer/assets/92362716/b7abed3e-a6e3-45d5-9a31-d3d44f3b358f)
 ### Na závěr…
 Úloha bude vyhodnocena na základě těchto kritérií:
 -	Dodržení funkčních požadavků
 -	Kvalita napsaného kódu
 -	Kvalita otestování (unit testy)
+
 Pokud byste se rozhodl/a některé požadavky ze zadání nesplnit a nebo je splnit jen částečně, popište nám to, prosím, včetně zdůvodnění.
 
 ## Dev comments
