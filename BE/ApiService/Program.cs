@@ -1,3 +1,5 @@
+using Serilog;
+
 internal class Program
 {
     private static void Main(string[] args)
@@ -11,6 +13,8 @@ internal class Program
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
+        builder.Host.UseSerilog((context, configuration) => configuration.ReadFrom.Configuration(context.Configuration));
+
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.
@@ -19,6 +23,8 @@ internal class Program
             app.UseSwagger();
             app.UseSwaggerUI();
         }
+
+        app.UseSerilogRequestLogging();
 
         app.UseHttpsRedirection();
 
