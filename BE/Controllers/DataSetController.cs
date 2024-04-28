@@ -2,6 +2,7 @@
 
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 using Swashbuckle.AspNetCore.Annotations;
 
@@ -13,6 +14,13 @@ namespace Controllers
     [Route(Constants.RouteNames.Base + "/data-set")]
     public class DataSetController : ControllerBase
     {
+        private readonly ILogger<DataSetController> Logger;
+
+        public DataSetController(ILogger<DataSetController> logger)
+        {
+            Logger = logger;
+        }
+
         [HttpGet]
         [Route(Constants.RouteNames.TableEntry)]
         [SwaggerOperation("Get TableRecords", "Get records for table views")]
@@ -21,6 +29,8 @@ namespace Controllers
         [SwaggerResponse(StatusCodes.Status500InternalServerError, ResponseText.Error)]
         public ActionResult<IList<DataSetModel>> GetTableRecords()
         {
+            Logger.LogInformation("{func} called", nameof(GetTableRecords));
+
             return Ok();
         }
 
@@ -33,6 +43,8 @@ namespace Controllers
         [SwaggerResponse(StatusCodes.Status500InternalServerError, ResponseText.Error)]
         public ActionResult<DataSetModel> GetRecordById(long id)
         {
+            Logger.LogInformation("{func} called, with id = {id}", nameof(GetRecordById), id);
+
             return Ok();
         }
 
@@ -43,6 +55,8 @@ namespace Controllers
         [SwaggerResponse(StatusCodes.Status500InternalServerError, ResponseText.Error)]
         public ActionResult<long> AddRecord(DataSetUploadModel model)
         {
+            Logger.LogInformation("{func} called, with model = {model}", nameof(AddRecord), model);
+
             return Created();
         }
     }
